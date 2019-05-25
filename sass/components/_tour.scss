@@ -1,0 +1,133 @@
+.tour__card{
+       
+        transition: all .5s;
+        position:relative; 
+        height: 55rem; 
+        perspective: 350rem;  
+        [class^="tour__card__front"]{
+            background-color: $color-white; 
+            font-size: 1.5rem;
+            border-radius: 0.3rem;
+            box-shadow: 0 1.5rem 1.5rem rgba($color-black,0.2); 
+        }
+        [class^="tour__card__back"]{
+            background-color: $color-white; 
+            font-size: 1.5rem;
+            border-radius: 0.3rem;
+            box-shadow: 0 1.5rem 1.5rem rgba($color-black,0.2); 
+        }
+        &:hover &__front {
+            transform: rotateY(-180deg);
+             backface-visibility: hidden;
+        //    z-index: -1;
+        } 
+        &:hover &__back {
+           transform: rotateY(0deg);
+             backface-visibility: hidden;
+        //    z-index: -1; 
+        } 
+        &__front { 
+            height:55rem;
+            position: absolute;
+            top:0;
+            left:0;
+            z-index: 100;
+            width: 100%;
+            transition: all .8s;
+           // transform: rotateY(-180deg);
+        }
+         
+        &__back{
+            position: absolute;
+            top:0;
+            left:0;
+            height:55rem;           
+            width: 100%;
+            transition: all .8s;
+             transform: rotateY(180deg);
+           backface-visibility: hidden;
+           &--1{
+            background-image: linear-gradient(to bottom, rgba($color-orange,0.9),rgba($color-orange,0.8)); 
+           }
+           &--2{
+            background-image: linear-gradient(to bottom,rgba($color-light-green,0.9), rgba($color-dark-green,0.4));
+           }
+           &--3{
+            background-image: linear-gradient(to bottom,rgba($color-blue,0.9), rgba($color-blue,0.4));
+           }
+        }
+        [class^="tour__card__top--pic"]{
+            background-size: cover;
+            height: 25rem;
+            clip-path: polygon(0 0,100% 0,100% 86%,0 100%);
+          
+        }
+        [class^="tour__card--heading__span"]{
+           padding: 1rem 1rem;
+        }
+        &__top--pic1{ 
+            background-image: linear-gradient(to bottom,rgba($color-orange,0.9), rgba($color-orange,0.4)), url('./../../img/nat-5.jpg');
+        }
+        &__top--pic2{
+            background-image:  linear-gradient(to bottom,rgba($color-light-green,0.9), rgba($color-dark-green,0.4)),url('./../../img/nat-6.jpg');
+        }
+        &__top--pic3{
+            background-image:  linear-gradient(to bottom,rgba($color-blue,0.9), rgba($color-blue,0.4)),url('./../../img/nat-7.jpg');
+        }
+        &--heading { 
+            position: absolute;
+            top:28%;
+            right:8%; 
+            font-weight: 300 !important; 
+            text-align: right;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            width: 63%;
+            &__span1 {
+                background-image: linear-gradient(to bottom,rgba($color-orange,0.9), rgba($color-orange,0.4));
+            }
+            &__span2 {
+                background-image: linear-gradient(to bottom,rgba($color-light-green,0.9), rgba($color-light-green,0.4));
+            }
+            &__span3 {
+                background-image: linear-gradient(to bottom,rgba($color-blue,0.9), rgba($color-blue,0.4));
+            }
+         }
+        &__items {
+            list-style: none;
+            text-align: center; 
+            &__container {
+                padding:1rem;
+            }
+        }
+        &__item:not(:last-child) {
+            border-bottom: 1px solid $color-light-grey;
+            padding: 1rem;
+        }
+        &__item:last-child {
+           padding: 1rem;
+           padding-bottom: 3.5rem; 
+        }
+        &__rate__box {
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            &--heading {
+                color:$color-white;
+                font-weight:300;
+            }
+            &__price {
+                font-weight: 300;
+                font-size: 5rem;
+                color: $color-white;
+            }
+        }
+    }
+    .button__container {
+       margin-top:10rem;
+        text-align: center;
+    }
+
+  
